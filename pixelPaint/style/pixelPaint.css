@@ -1,0 +1,50 @@
+body {
+   font-family: sans-serif;
+}
+
+#grid {
+   border: none;
+   border-collapse: collapse;
+   width: inherit;
+   height: 100%;
+   
+}
+
+td {
+   width:auto; height:auto;
+   
+   }
+
+#recentColors {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.pallete {
+   width:40px; height:40px;
+   border: solid;
+   
+}
+
+#canvas {
+   border: solid;
+   height: 500px;
+   width: 500px;
+   float: left;
+   margin: 5px;
+   padding: none;
+}
+
+#controls {
+   border: none;
+   float: left;
+   height: 500px;
+   width: 175px;
+   margin: 5px;
+   text-align: center;
+   
+}
+
+input[type=range]::-webkit-slider-thumb {
+   background: #76ffff;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>pixelPaint.js</title>
+    <link rel="stylesheet" type="text/css" href="style/pixelPaint.css" />
+    <script src="scripts/pixelPaint.js"></script>
+    <meta name="author" content="Marcus Haddon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+</head>
+
+<body onload="vCanvas.loadPix(), vCanvas.stretchCanvas()">
+    <h1>pixelPaint.js</h1>
+    <div ontouchstart="brush.press()" id="canvas" class="w3-half"></div>
+    
+    <div id="controls">
+        
+        <h3 id="opacityDisplay">Opacity:</h3>
+        <input type="range" id="opacity" onchange="brush.setOpacity(this.value)" value="100" />
+        <h3 id="colorDisplay">Color</h3>
+        R:&nbsp<input type="range" id="r" onchange="brush.setColor(0, this.value)" max="255" value="0"/><br>
+        G:&nbsp<input type="range" id="g" onchange="brush.setColor(1, this.value)" max="255" value="0"/><br>
+        B:&nbsp<input type="range" id="b" onchange="brush.setColor(2, this.value)" max="255" value="0"/><br>
+        <h3>Brush Size:</h3>
+        <input type="range" id="size" min="2" max="12" value="2" step="2" onchange="brush.setSize(this.value)"/>
+        <h3>Recent Colors</h3>
+        <table id="recentColors">
+    <tr><td class="pallete" style="background: rgb(0,0,0)" onclick="brush.presetColor(this.style.backgroundColor)"></td><td class="pallete" onclick="brush.presetColor(this.style.backgroundColor)" style="background: rgb(255,255,255)"></td><td class="pallete" onclick="brush.presetColor(this.style.backgroundColor)" style="background: rgb(255,255,255)"></tr>
+    <tr></td><td class="pallete" onclick="brush.presetColor(this.style.backgroundColor)" style="background: rgb(255,255,255)"></td><td class="pallete" onclick="brush.presetColor(this.style.backgroundColor)" style="background: rgb(255,255,255)"></td><td class="pallete" onclick="brush.presetColor(this.style.backgroundColor)" style="background: rgb(255,255,255)"></td></tr>
+    
+</table>
+        <h3><span id="undo" onclick="vCanvas.undo()">Undo</span>&nbsp||&nbsp<span id="redo" onclick="vCanvas.redo()">Redo</span></h3>
+    </div>
+    
+
+
+
+</body>
+</html>
